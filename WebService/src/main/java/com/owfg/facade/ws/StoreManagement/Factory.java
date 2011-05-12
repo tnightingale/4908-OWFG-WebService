@@ -30,9 +30,18 @@ public class Factory {
     private int currentBanner = 0;
 
     Factory() {
+        stores = new ArrayList<Store>();
+        banners = new ArrayList<Banner>();
+
         Store store;
+        Banner banner;
+
         while ((store = createStore()) != null) {
             stores.add(store);
+        }
+
+        while ((banner = createBanner()) != null) {
+            banners.add(banner);
         }
     }
 
