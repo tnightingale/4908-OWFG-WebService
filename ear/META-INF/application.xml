@@ -6,36 +6,6 @@
 
     <module>
         <web>
-            <web-uri>WebService-1.0.jar</web-uri>
-            <context-root>/</context-root>
-        </web>
-    </module>
-    <module>
-        <web>
-            <web-uri>web.jar</web-uri>
-            <context-root>/</context-root>
-        </web>
-    </module>
-    <module>
-        <web>
-            <web-uri>web.war</web-uri>
-            <context-root>/</context-root>
-        </web>
-    </module>
-    <module>
-        <web>
-            <web-uri>WebService-1.0.war</web-uri>
-            <context-root>/</context-root>
-        </web>
-    </module>
-    <module>
-        <web>
-            <web-uri>StoreManagementWS-1.0.war</web-uri>
-            <context-root>/</context-root>
-        </web>
-    </module>
-    <module>
-        <web>
             <web-uri>StoreManagement-ws-1.0.war</web-uri>
             <context-root>/</context-root>
         </web>
