@@ -17,7 +17,6 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.1
  * 
  */
-@WebService(name = "StoreManagement", targetNamespace = "http://ws.facade.owfg.com/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -29,7 +28,6 @@ public interface StoreManagement {
      * @return
      *     returns java.util.List<com.owfg.facade.ws.StoreManagement.Store>
      */
-    @WebMethod
     @WebResult(name = "stores", targetNamespace = "")
     @RequestWrapper(localName = "getActiveStores", targetNamespace = "http://ws.facade.owfg.com/", className = "com.owfg.facade.ws.StoreManagement.GetActiveStores")
     @ResponseWrapper(localName = "getActiveStoresResponse", targetNamespace = "http://ws.facade.owfg.com/", className = "com.owfg.facade.ws.StoreManagement.GetActiveStoresResponse")
