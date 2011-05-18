@@ -1,0 +1,135 @@
+<definitions name="StoreManagementService" targetNamespace="http://ws.facade.owfg.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.facade.owfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://ws.facade.owfg.com/" version="1.0" xmlns:tns="http://ws.facade.owfg.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getActiveStores" type="tns:getActiveStores"/>
+   <xs:element name="getActiveStoresResponse" type="tns:getActiveStoresResponse"/>
+   <xs:element name="getBanners" type="tns:getBanners"/>
+   <xs:element name="getBannersResponse" type="tns:getBannersResponse"/>
+   <xs:element name="getStoreManagementInfo" type="tns:getStoreManagementInfo"/>
+   <xs:element name="getStoreManagementInfoResponse" type="tns:getStoreManagementInfoResponse"/>
+   <xs:complexType name="getBanners">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getBannersResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:banner"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="banner">
+    <xs:sequence>
+     <xs:element name="bannerId" type="xs:long"/>
+     <xs:element minOccurs="0" name="bannerName" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getActiveStores">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getActiveStoresResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:store"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="store">
+    <xs:sequence>
+     <xs:element name="bannerId" type="xs:long"/>
+     <xs:element name="storeId" type="xs:long"/>
+     <xs:element minOccurs="0" name="storeName" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getStoreManagementInfo">
+    <xs:sequence>
+     <xs:element name="arg0" type="xs:long"/>
+     <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getStoreManagementInfoResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:storeManagementInfo"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storeManagementInfo">
+    <xs:sequence>
+     <xs:element name="balanceOnHand" type="xs:double"/>
+     <xs:element name="forecast" type="xs:double"/>
+     <xs:element name="inTransit" type="xs:double"/>
+     <xs:element minOccurs="0" name="itemDescription" type="xs:string"/>
+     <xs:element name="minimum" type="xs:long"/>
+     <xs:element name="onOrder" type="xs:double"/>
+     <xs:element name="pack" type="xs:int"/>
+     <xs:element minOccurs="0" name="promotion" type="xs:string"/>
+     <xs:element name="regularPrice" type="xs:double"/>
+     <xs:element minOccurs="0" name="source" type="xs:string"/>
+     <xs:element name="storeId" type="xs:long"/>
+     <xs:element minOccurs="0" name="upc" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name="StoreManagement_getActiveStoresResponse">
+  <part element="tns:getActiveStoresResponse" name="getActiveStoresResponse"/>
+ </message>
+ <message name="StoreManagement_getActiveStores">
+  <part element="tns:getActiveStores" name="getActiveStores"/>
+ </message>
+ <message name="StoreManagement_getBanners">
+  <part element="tns:getBanners" name="getBanners"/>
+ </message>
+ <message name="StoreManagement_getBannersResponse">
+  <part element="tns:getBannersResponse" name="getBannersResponse"/>
+ </message>
+ <message name="StoreManagement_getStoreManagementInfo">
+  <part element="tns:getStoreManagementInfo" name="getStoreManagementInfo"/>
+ </message>
+ <message name="StoreManagement_getStoreManagementInfoResponse">
+  <part element="tns:getStoreManagementInfoResponse" name="getStoreManagementInfoResponse"/>
+ </message>
+ <portType name="StoreManagement">
+  <operation name="getActiveStores" parameterOrder="getActiveStores">
+   <input message="tns:StoreManagement_getActiveStores"/>
+   <output message="tns:StoreManagement_getActiveStoresResponse"/>
+  </operation>
+  <operation name="getBanners" parameterOrder="getBanners">
+   <input message="tns:StoreManagement_getBanners"/>
+   <output message="tns:StoreManagement_getBannersResponse"/>
+  </operation>
+  <operation name="getStoreManagementInfo" parameterOrder="getStoreManagementInfo">
+   <input message="tns:StoreManagement_getStoreManagementInfo"/>
+   <output message="tns:StoreManagement_getStoreManagementInfoResponse"/>
+  </operation>
+ </portType>
+ <binding name="StoreManagementBinding" type="tns:StoreManagement">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getActiveStores">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getBanners">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getStoreManagementInfo">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="StoreManagementService">
+  <port binding="tns:StoreManagementBinding" name="StoreManagementPort">
+   <soap:address location="https://it-talabj:8443/caos/StoreManagement"/>
+  </port>
+ </service>
+</definitions>
