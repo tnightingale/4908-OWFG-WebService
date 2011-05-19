@@ -7,10 +7,14 @@ import java.util.List;
 import org.jboss.ejb3.annotation.SecurityDomain;
 import org.jboss.wsf.spi.annotation.WebContext;
 import javax.annotation.security.RolesAllowed;
+import javax.ejb.Stateless;
+
 @WebService
+@Stateless
 @SecurityDomain("JBossWS")
 @RolesAllowed("friend")
-@WebContext(contextRoot = "caos", urlPattern = "/StoreManagement",authMethod="BASIC", transportGuarantee="CONFIDENTIAL")
+//@WebContext(contextRoot = "caos", urlPattern = "/StoreManagement",authMethod="BASIC", transportGuarantee="CONFIDENTIAL")
+@WebContext(authMethod="BASIC", transportGuarantee="CONFIDENTIAL")
 //@WebContext(authMethod = "BASIC", transportGuarantee = "NONE", secureWSDLAccess = true)
 public class StoreManagementImpl implements StoreManagement{
     private Factory factory = new Factory();
