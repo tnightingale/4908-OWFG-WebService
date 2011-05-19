@@ -23,10 +23,12 @@
             <id>JBOSS</id>
             <name>JBOSS REPO</name>
             <url>https://repository.jboss.org/maven2/</url>
+            <layout>default</layout>
         </repository>
     </repositories>
 
     <dependencies>
+
         <dependency>
             <groupId>org.jboss.ejb3</groupId>
             <artifactId>jboss-ejb3-ext-api</artifactId>

@@ -10,8 +10,9 @@ import javax.annotation.security.RolesAllowed;
 @WebService
 @SecurityDomain("JBossWS")
 @RolesAllowed("friend")
-@WebContext(authMethod = "BASIC", transportGuarantee = "NONE", secureWSDLAccess = false)
-public class StoreManagementImpl {
+@WebContext(contextRoot = "caos", urlPattern = "/StoreManagement",authMethod="BASIC", transportGuarantee="CONFIDENTIAL")
+//@WebContext(authMethod = "BASIC", transportGuarantee = "NONE", secureWSDLAccess = true)
+public class StoreManagementImpl implements StoreManagement{
     private Factory factory = new Factory();
 
     @WebMethod

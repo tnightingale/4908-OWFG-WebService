@@ -16,6 +16,7 @@
             <groupId>StoreManagement</groupId>
             <artifactId>StoreManagement-ws</artifactId>
             <version>1.0</version>
+            <type>war</type>
         </dependency>
     </dependencies>
 
@@ -26,10 +27,11 @@
                 <version>2.5</version>
                 <configuration>
                     <modules>
-                        <jarModule>
+                        <webModule>
                             <groupId>StoreManagement</groupId>
                             <artifactId>StoreManagement-ws</artifactId>
-                        </jarModule>
+                            <uri>StoreManagement-ws-1.0.war</uri>
+                        </webModule>
                     </modules>
                 </configuration>
             </plugin>
